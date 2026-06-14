@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bad Apple!!</title>
     <style>
-        body { margin: 0; padding: 0; background: black; display: flex; justify-content: center; align-items: center; height: 100vh; }
-        video { width: 100%; max-width: 800px; }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: black; overflow: hidden; }
+        
+        /* This keeps the video filling the screen */
+        #vid { width: 100vw; height: 100vh; object-fit: contain; }
+
+        /* The cover screen */
         #overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             display: flex; justify-content: center; align-items: center;
-            color: white; font-family: sans-serif; cursor: pointer;
-            background: rgba(0,0,0,0.5); z-index: 10;
+            background: black; color: white; cursor: pointer;
+            z-index: 100; font-family: sans-serif;
         }
     </style>
 </head>
 <body>
 
-    <!-- This overlay forces the user to click once, which "unlocks" the audio -->
-    <div id="overlay" onclick="enableAudio()">
-        <h1>Click anywhere to play with sound</h1>
+    <div id="overlay" onclick="startExperience()">
+        <h1>Click anywhere to play Bad Apple!!</h1>
     </div>
 
-    <video id="vid" autoplay loop muted playsinline>
+    <video id="vid" loop playsinline>
         <source src="badapple.mp4" type="video/mp4">
-        Your browser does not support the video tag.
     </video>
 
     <script>
-        function enableAudio() {
+        function startExperience() {
             var video = document.getElementById("vid");
             var overlay = document.getElementById("overlay");
             
-            // Unmute the video
+            // Start the video and unmute it
+            video.play();
             video.muted = false;
             
-            // Hide the click overlay
+            // Remove the overlay from view
             overlay.style.display = "none";
         }
     </script>
