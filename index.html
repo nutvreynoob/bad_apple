@@ -1,43 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: black; overflow: hidden; }
-        
-        /* This keeps the video filling the screen */
-        #vid { width: 100vw; height: 100vh; object-fit: contain; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bad Apple!!</title>
+    
+    <meta property="og:title" content="Bad Apple!!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nutvreynoob.github.io/bad_apple/">
+    <meta property="og:description" content="Click to experience Bad Apple!! with full audio.">
+    <meta property="og:image" content="https://nutvreynoob.github.io/bad_apple/thumbnail.png">
+    <meta name="theme-color" content="#000000">
 
-        /* The cover screen */
+    <style>
+        /* Base page styling */
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: black; 
+            overflow: hidden; 
+        }
+        
+        /* Video styling to keep it centered and full screen without stretching */
+        #vid { 
+            width: 100vw; 
+            height: 100vh; 
+            object-fit: contain; 
+        }
+
+        /* The 'Click to Play' cover screen styling */
         #overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            display: flex; justify-content: center; align-items: center;
-            background: black; color: white; cursor: pointer;
-            z-index: 100; font-family: sans-serif;
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            background-color: black; 
+            color: white; 
+            cursor: pointer;
+            z-index: 100; 
+            font-family: sans-serif;
         }
     </style>
 </head>
 <body>
-
-    <div id="overlay" onclick="startExperience()">
-        <h1>Click anywhere to play Bad Apple!!</h1>
-    </div>
-
-    <video id="vid" loop playsinline>
-        <source src="badapple.mp4" type="video/mp4">
-    </video>
-
-    <script>
-        function startExperience() {
-            var video = document.getElementById("vid");
-            var overlay = document.getElementById("overlay");
-            
-            // Start the video and unmute it
-            video.play();
-            video.muted = false;
-            
-            // Remove the overlay from view
-            overlay.style.display = "none";
-        }
-    </script>
-</body>
-</html>
