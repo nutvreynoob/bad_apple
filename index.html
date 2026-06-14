@@ -11,14 +11,13 @@
     <meta property="og:description" content="Playing Bad Apple">
     <meta property="og:type" content="video.other">
     
-    <!-- This creates the playable embed in Discord -->
-    <meta property="og:video" content="https://nutvreynoob.github.io/badapple/badapple.mp4">
+    <!-- Video and Image links updated with 'bad_apple' -->
+    <meta property="og:video" content="https://nutvreynoob.github.io/bad_apple/badapple.mp4">
     <meta property="og:video:type" content="video/mp4">
     <meta property="og:video:width" content="1280">
     <meta property="og:video:height" content="720">
     
-    <!-- The thumbnail that shows before clicking play -->
-    <meta property="og:image" content="https://nutvreynoob.github.io/badapple/thumbnail.jpg">
+    <meta property="og:image" content="https://nutvreynoob.github.io/bad_apple/thumbnail.jpg">
 
     <style>
         body {
@@ -33,13 +32,14 @@
         video {
             max-width: 100%;
             max-height: 100%;
+            pointer-events: none; /* Prevents users from right-clicking or interacting with the video */
         }
     </style>
 </head>
 <body>
 
-    <!-- The video that plays when you visit the actual website -->
-    <video controls autoplay loop>
+    <!-- Slider (controls) removed. Muted, autoplay, and loop added. -->
+    <video autoplay loop muted>
         <source src="badapple.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
