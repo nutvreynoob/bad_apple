@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bad Apple!!</title>
     
+    <!-- Discord & Social Media Embed Tags -->
     <meta property="og:title" content="Bad Apple!!">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="video.other">
     <meta property="og:url" content="https://nutvreynoob.github.io/bad_apple/">
     <meta property="og:description" content="Click to experience Bad Apple!! with full audio.">
+    
+    <!-- Thumbnail Image (Still needed before the user clicks play!) -->
     <meta property="og:image" content="https://nutvreynoob.github.io/bad_apple/thumbnail.png">
+    
+    <!-- NEW: Video Embed Tags -->
+    <meta property="og:video" content="https://nutvreynoob.github.io/bad_apple/badapple.mp4">
+    <meta property="og:video:type" content="video/mp4">
+    <meta property="og:video:width" content="1280">
+    <meta property="og:video:height" content="720">
+
     <meta name="theme-color" content="#000000">
 
     <style>
@@ -49,3 +59,32 @@
     </style>
 </head>
 <body>
+
+    <!-- The interactive overlay that unlocks the browser's audio block -->
+    <div id="overlay" onclick="startExperience()">
+        <h1>Click anywhere to play Bad Apple!!</h1>
+    </div>
+
+    <!-- The video element -->
+    <video id="vid" loop playsinline>
+        <source src="badapple.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- The script that handles the play action -->
+    <script>
+        function startExperience() {
+            var video = document.getElementById("vid");
+            var overlay = document.getElementById("overlay");
+            
+            // Force the video to play and explicitly set it to unmuted
+            video.muted = false;
+            video.play();
+            
+            // Hide the click screen so the user can watch the video
+            overlay.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
